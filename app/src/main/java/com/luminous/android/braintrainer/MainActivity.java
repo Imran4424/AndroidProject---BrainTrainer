@@ -40,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         quizTextView.setText(MessageFormat.format("{0} + {1}", x, y));
 
         for (int i = 0; i < 4; i++) {
-            
+            if(i == correctAnswerIndex) {
+                answerList.add(x + y);
+            } else {
+                answerList.add(new Random().nextInt(99) + new Random().nextInt(99));
+            }
         }
 
     }
