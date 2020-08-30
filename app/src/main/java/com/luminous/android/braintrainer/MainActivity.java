@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         totalQuestion++;
 
-        scoreText.setText(score + " / " + totalQuestion);
+        scoreText.setText(score + "/" + totalQuestion);
 
         quizUISetUp();
     }
