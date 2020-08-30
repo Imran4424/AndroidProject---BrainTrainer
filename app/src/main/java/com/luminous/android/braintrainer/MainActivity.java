@@ -3,6 +3,7 @@ package com.luminous.android.braintrainer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -80,5 +81,20 @@ public class MainActivity extends AppCompatActivity {
         scoreText.setText(score + "/" + totalQuestion);
 
         quizUISetUp();
+    }
+
+    public void setUpCountDownTimer(int seconds) {
+        new CountDownTimer(seconds * 1000 + 100, 1000) {
+
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
     }
 }
