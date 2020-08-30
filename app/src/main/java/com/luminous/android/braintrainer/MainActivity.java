@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private TextView quizTextView;
     private ArrayList<Integer> answerList = new ArrayList<Integer>();
+    private int[] buttonIds = {R.id.optionOneButton, R.id.opt};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
