@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void evaluateQuiz(View view) {
-        
+        if(((Button) view).getText().toString().equals(Integer.toString(correctAnswer))) {
+
+        }
+    }
+
+    public void updateScore(int score, int totalQuestion) {
+
     }
 }
