@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> answerList = new ArrayList<Integer>();
     private int[] buttonIds = {R.id.optionOneButton,
             R.id.optionTwoButton,
-            R.id.optionThreeButton,};
+            R.id.optionThreeButton, R.id.optionFourButton};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
