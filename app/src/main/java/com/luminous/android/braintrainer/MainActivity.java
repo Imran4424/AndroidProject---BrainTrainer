@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.startButton);
         quizTextView = findViewById(R.id.quizText);
+
+        quizUISetUp();
     }
 
     public void startGame(View view) {
