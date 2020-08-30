@@ -10,10 +10,12 @@ import android.widget.TextView;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeoutException;
 
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private TextView quizTextView;
+    private TextView scoreText;
     private int correctAnswer = 0;
     private int[] buttonIds = {R.id.optionOneButton,
             R.id.optionTwoButton,
