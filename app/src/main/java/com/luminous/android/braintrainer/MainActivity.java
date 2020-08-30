@@ -14,7 +14,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private TextView quizTextView;
-    private ArrayList<Integer> answerList = new ArrayList<Integer>();
+    private int correctAnswer = 0;
     private int[] buttonIds = {R.id.optionOneButton,
             R.id.optionTwoButton,
             R.id.optionThreeButton,
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public void quizUISetUp() {
         int x = new Random().nextInt(99);
         int y = new Random().nextInt(99);
+        correctAnswer = x + y;
 
         int correctAnswerIndex = new Random().nextInt(4);
 
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 4; i++) {
             if(i == correctAnswerIndex) {
-                answerList.add(x + y);
                 ((Button)findViewById(buttonIds[i])).setText(Integer.toString((x + y)));
             } else {
                 ((Button)findViewById(buttonIds[i])).setText(Integer.toString((new Random().nextInt(99) + new Random().nextInt(99))));
@@ -53,5 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
             ((Button)findViewById(buttonIds[i])).setTextSize(60);
         }
+    }
+
+    public void evaluateQuiz(View view) {
+
     }
 }
