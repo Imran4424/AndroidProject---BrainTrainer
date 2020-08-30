@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             if(i == correctAnswerIndex) {
                 answerList.add(x + y);
+                ((Button)findViewById(buttonIds[i])).setText(Integer.toString((x + y)));
             } else {
-                answerList.add(new Random().nextInt(99) + new Random().nextInt(99));
+                ((Button)findViewById(buttonIds[i])).setText(Integer.toString((new Random().nextInt(99) + new Random().nextInt(99))));
             }
         }
 
