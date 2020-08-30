@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         quizTextView = findViewById(R.id.quizText);
         scoreText = findViewById(R.id.scoreText);
         timerText = findViewById(R.id.timerText);
+        resultText = findViewById(R.id.resultTextView);
 
         quizUISetUp();
     }
