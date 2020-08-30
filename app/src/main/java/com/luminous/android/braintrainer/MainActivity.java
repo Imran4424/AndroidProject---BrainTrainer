@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             resultText.setText("Correct!");
             score++;
         } else {
-            resultText.setText("Wrong!!!");
+            resultText.setText("Wrong :(");
         }
 
         totalQuestion++;
