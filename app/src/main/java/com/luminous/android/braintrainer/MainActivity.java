@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         resultText = findViewById(R.id.resultText);
 
         quizUISetUp();
+        setUpCountDownTimer(30);
     }
 
     public void startGame(View view) {
