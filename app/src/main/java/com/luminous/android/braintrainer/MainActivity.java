@@ -46,6 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 answerList.add(new Random().nextInt(99) + new Random().nextInt(99));
             }
         }
-
+    
     }
 }
