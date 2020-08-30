@@ -70,12 +70,15 @@ public class MainActivity extends AppCompatActivity {
     public void evaluateQuiz(View view) {
         if(((Button) view).getText().toString().equals(Integer.toString(correctAnswer))) {
             resultText.setText("Correct!");
+            score++;
         } else {
             resultText.setText("Wrong!!!");
         }
-    }
 
-    public void updateScore() {
+        totalQuestion++;
 
+        scoreText.setText(score + " / " + totalQuestion);
+
+        quizUISetUp();
     }
 }
