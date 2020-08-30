@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void quizUISetUp() {
-        int x = new Random().nextInt(99);
-        int y = new Random().nextInt(99);
+        int x = new Random().nextInt(100);
+        int y = new Random().nextInt(100);
         correctAnswer = x + y;
 
         int correctAnswerIndex = new Random().nextInt(4);
@@ -53,7 +53,12 @@ public class MainActivity extends AppCompatActivity {
             if(i == correctAnswerIndex) {
                 ((Button)findViewById(buttonIds[i])).setText(Integer.toString((x + y)));
             } else {
-                ((Button)findViewById(buttonIds[i])).setText(Integer.toString((new Random().nextInt(99) + new Random().nextInt(99))));
+                int wrongAnswer = new Random().nextInt(200);
+                while (wrongAnswer == correctAnswer) {
+                    wrongAnswer = 
+                }
+
+                ((Button)findViewById(buttonIds[i])).setText(Integer.toString(wrongAnswer));
             }
 
             ((Button)findViewById(buttonIds[i])).setTextSize(60);
