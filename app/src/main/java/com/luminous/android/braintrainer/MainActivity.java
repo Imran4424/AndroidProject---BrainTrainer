@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 int wrongAnswer = new Random().nextInt(200);
                 while (wrongAnswer == correctAnswer) {
-                    wrongAnswer = 
+                    wrongAnswer = new Random().nextInt(200);
                 }
 
                 ((Button)findViewById(buttonIds[i])).setText(Integer.toString(wrongAnswer));
