@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.startButton);
         quizTextView = findViewById(R.id.quizText);
-
-
     }
 
     public void startGame(View view) {
@@ -46,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 answerList.add(new Random().nextInt(99) + new Random().nextInt(99));
             }
         }
-    
+
     }
 }
