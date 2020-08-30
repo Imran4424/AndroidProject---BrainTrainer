@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startButton);
         quizTextView = findViewById(R.id.quizText);
         scoreText = findViewById(R.id.scoreText);
-        timerText = 
+        timerText = findViewById(R.id.timerText);
 
         quizUISetUp();
     }
