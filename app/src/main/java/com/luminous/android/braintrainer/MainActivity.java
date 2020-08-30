@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView timerText;
     private TextView resultText;
     private int correctAnswer = 0;
+    int score = 0;
+    int totalQuestion = 0;
     private int[] buttonIds = {R.id.optionOneButton,
             R.id.optionTwoButton,
             R.id.optionThreeButton,
@@ -67,11 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void evaluateQuiz(View view) {
         if(((Button) view).getText().toString().equals(Integer.toString(correctAnswer))) {
-
+            resultText.setText("Correct!");
+        } else {
+            resultText.setText("Wrong!!!");
         }
     }
 
-    public void updateScore(int score, int totalQuestion) {
+    public void updateScore() {
 
     }
 }
