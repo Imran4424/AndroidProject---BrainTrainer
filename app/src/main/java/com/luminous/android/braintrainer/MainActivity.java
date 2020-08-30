@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 ((Button)findViewById(buttonIds[i])).setText(Integer.toString((new Random().nextInt(99) + new Random().nextInt(99))));
             }
-        }
 
+            ((Button)findViewById(buttonIds[i])).setTextSize(60);
+        }
     }
 }
