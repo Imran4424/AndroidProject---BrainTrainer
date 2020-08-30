@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.TimeoutException;
 
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         quizTextView = findViewById(R.id.quizText);
         scoreText = findViewById(R.id.scoreText);
         timerText = findViewById(R.id.timerText);
-        resultText = findViewById(R.id.resultTextView);
+        resultText = findViewById(R.id.resultText);
 
         quizUISetUp();
     }
