@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
         new CountDownTimer(seconds * 1000 + 100, 1000) {
 
             @Override
-            public void onTick(long l) {
-
+            public void onTick(long miliSeconds) {
+                timerText.setText((miliSeconds/1000) + "s");
             }
 
             @Override
