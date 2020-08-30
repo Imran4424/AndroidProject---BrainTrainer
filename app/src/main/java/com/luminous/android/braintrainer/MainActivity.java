@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 4; i++) {
             if(i == correctAnswerIndex) {
-                ((Button)findViewById(buttonIds[i])).setText(Integer.toString((x + y)));
+                ((Button)findViewById(buttonIds[i])).setText(Integer.toString((correctAnswer)));
             } else {
                 int wrongAnswer = new Random().nextInt(200);
                 while (wrongAnswer == correctAnswer) {
