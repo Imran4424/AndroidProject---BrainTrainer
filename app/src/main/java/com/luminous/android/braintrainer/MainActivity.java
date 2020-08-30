@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private TextView quizTextView;
     private TextView scoreText;
+    private TextView timerText;
     private int correctAnswer = 0;
     private int[] buttonIds = {R.id.optionOneButton,
             R.id.optionTwoButton,
