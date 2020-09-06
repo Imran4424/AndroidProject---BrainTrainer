@@ -1,18 +1,23 @@
 package com.luminous.android.braintrainer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.gridlayout.widget.GridLayout;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
+    private Button playAgain;
+    private ConstraintLayout quizConstraintLayout;
+    private GridLayout quizGridLayout;
     private TextView quizTextView;
     private TextView scoreText;
     private TextView timerText;
@@ -31,17 +36,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         startButton = findViewById(R.id.startButton);
+        playAgain = findViewById(R.id.playAgain);
         quizTextView = findViewById(R.id.quizText);
         scoreText = findViewById(R.id.scoreText);
         timerText = findViewById(R.id.timerText);
         resultText = findViewById(R.id.resultText);
+        quizConstraintLayout = findViewById(R.id.quizConstraint);
+        quizGridLayout = findViewById(R.id.quizGridLayout);
 
-        quizUISetUp();
-        setUpCountDownTimer(30);
+        quizConstraintLayout.setVisibility(View.INVISIBLE);
     }
 
     public void startGame(View view) {
         startButton.setVisibility(View.INVISIBLE);
+        playAgain.setVisibility(View.INVISIBLE);
+        quizConstraintLayout.setVisibility(View.VISIBLE);
+        resultText.setText("");
+        setUpCountDownTimer(30);
+        quizUISetUp();
     }
 
     public void quizUISetUp() {
@@ -94,8 +106,49 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-
+                resultText.setText("Your score: " + score);
+                disableButtons(quizGridLayout);
+                playAgain.setVisibility(View.VISIBLE);
             }
         }.start();
+    }
+
+    public void playAgain(View view) {
+        score = 0;
+        totalQuestion = 0;
+        scoreText.setText(score + "/" + totalQuestion);
+        setUpCountDownTimer(30);
+        startButton.setVisibility(View.INVISIBLE);
+        playAgain.setVisibility(View.INVISIBLE);
+        enableButtons(quizGridLayout);
+        quizConstraintLayout.setVisibility(View.VISIBLE);
+        resultText.setText("");
+        quizUISetUp();
+    }
+
+    private void disableButtons(GridLayout layout) {
+
+        // Get all touchable views
+        ArrayList<View> layoutButtons = layout.getTouchables();
+
+        // loop through them, if they are an instance of Button, disable it.
+        for(View v : layoutButtons){
+            if( v instanceof Button ) {
+                ((Button)v).setEnabled(false);
+            }
+        }
+    }
+
+    private void enableButtons(GridLayout layout) {
+
+        // Get all touchable views
+        ArrayList<View> layoutButtons = layout.getTouchables();
+
+        // loop through them, if they are an instance of Button, enable it.
+        for(View v : layoutButtons){
+            if( v instanceof Button ) {
+                ((Button)v).setEnabled(true);
+            }
+        }
     }
 }
